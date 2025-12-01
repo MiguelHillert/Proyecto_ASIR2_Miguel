@@ -30,16 +30,16 @@ Para contextualizar el proyecto en un entorno real, se ha seleccionado el perfil
 
 El escenario de trabajo parte de una situación habitual en el sector: la empresa ha sufrido micro-cortes en sus servicios y dificultades para gestionar el teletrabajo seguro de sus empleados. El proyecto no consiste en crear la empresa desde cero, sino en actuar como el **Departamento de Sistemas (IT)** que debe diseñar una nueva infraestructura interna (Intranet, Servidores de Pruebas y Almacenamiento) para solucionar la deuda técnica acumulada y profesionalizar el despliegue de sus aplicaciones.
 
-### 3. Identificación de necesidades tecnológicas (Enfoque Innovador)
+### 3. Identificación de necesidades tecnológicas (Mapeo Curricular)
 
-La auditoría de seguridad revela que la empresa tiene servidores antiguos en la oficina que deben ser accesibles desde internet, pero la conexión a internet de la sede carece de IP fija y seguridad perimetral moderna. Para solucionar esto sin migrar todos los datos (costoso) ni exponer la red local (peligroso), se propone una arquitectura de **"Nube Híbrida con Túnel Inverso"**.
+La auditoría técnica ha desglosado las necesidades del proyecto vinculándolas directamente a las competencias requeridas para la modernización de la infraestructura:
 
-Las necesidades técnicas se han elevado para superar los estándares básicos:
-
-* **Conectividad y Seguridad (SRI):** En lugar de las VPNs tradicionales (lentas y pesadas), se requiere implementar **WireGuard**, un protocolo de nueva generación más rápido y auditable. Se necesita un **VPS en la nube (AWS)** que actúe de "cara pública", limpiando el tráfico malicioso antes de que llegue a la oficina mediante un **Proxy Inverso**.
-* **Gestión de Identidad (ASO):** Centralización de usuarios con **OpenLDAP**, pero integrando una gestión moderna. Se requiere que los servicios web lean estos usuarios para evitar duplicidad de contraseñas.
-* **Despliegue de Aplicaciones (IAW):** Para maximizar los recursos del hardware limitado, se abandonará la virtualización tradicional por servidor en favor de la **Containerización (Docker)**. Se desplegará **Nextcloud** y una Wiki interna utilizando *Docker Compose*, facilitando las copias de seguridad y la actualización.
-* **Monitorización Inteligente (SAD):** Se sustituye la revisión manual de logs por un stack de observabilidad: **Prometheus** (métricas) + **Grafana** (visualización). El elemento diferenciador será la **automatización de respuesta con n8n**: si un servicio cae, n8n recibirá la alerta y notificará automáticamente al equipo de guardia vía Telegram/Email, cerrando el ciclo de incidente.
+* **[ASGBD] Gestión de Datos Críticos:** La empresa no puede depender de bases de datos por defecto. Se requiere desplegar un servidor **MariaDB/MySQL** optimizado. No basta con la instalación; es imperativo configurar **políticas de usuarios (GRANTS)** para separar los permisos de la aplicación Nextcloud de los del administrador, así como programar **scripts de exportación lógica (mysqldump)** automatizados para evitar la pérdida de datos.
+* **[ASO] Administración de Sistemas:** Se necesita estandarizar los servidores (Linux Ubuntu Server). El reto principal es la **gestión de identidades centralizada**: implementación de scripts en *Bash* y configuración de **OpenLDAP** para que los usuarios tengan *roaming profile* (su /home les sigue) y cuotas de disco asignadas.
+* **[SRI] Interconexión Híbrida:** La red local debe conectarse con la nube. Se requiere configurar un **Servidor VPN (WireGuard)** que actúe de túnel transparente. Además, se debe implementar un servidor **DNS interno (Bind9 o Unbound)** para que las direcciones internas (`intranet.empresa.lan`) se resuelvan correctamente tanto en la oficina como a través de la VPN.
+* **[IAW] Despliegue de Aplicaciones:** Abandonar las instalaciones monolíticas. Se requiere "dockerizar" la intranet corporativa (**Nextcloud** y Wiki). Esto implica configurar un **Proxy Inverso (Nginx/Traefik)** en la nube (AWS) que gestione los certificados SSL (HTTPS) y enrute el tráfico hacia los contenedores locales de forma segura.
+* **[SAD] Seguridad y Monitorización:** La alta disponibilidad se simulará mediante la capacidad de recuperación rápida. Se necesita un sistema de **monitorización activa (Prometheus + Grafana)** que vigile el estado de los discos y la carga de la CPU. La seguridad perimetral se reforzará con **Fail2Ban** en el nodo expuesto a internet para mitigar ataques de fuerza bruta.
+* **[IPE II] Enfoque Profesional:** El proyecto debe simular un entorno de producción real, priorizando el uso de herramientas demandadas en el mercado laboral (Docker, AWS, n8n) y generando documentación técnica que justifique la toma de decisiones (Soft Skills).
 
 ### 4. Oportunidades y viabilidad del proyecto
 
@@ -55,28 +55,31 @@ Adicionalmente, se considerará la **Ley de Propiedad Intelectual**, asegurando 
 
 ### 6. Guion inicial del proyecto
 
-El proyecto implementará un esquema de "Servicios Ocultos" protegidos por la nube:
+El cronograma de trabajo se organiza para cubrir todas las áreas técnicas de forma secuencial:
 
-* **Fase 1: El Bastión Local (SRI + ASO).**
-    * Despliegue de **OPNsense** (o servidor Linux endurecido) en VirtualBox como Gateway.
-    * Segmentación de red: DMZ interna y Red de Servicios.
-    * Configuración de políticas de Firewall estrictas (Deny All por defecto).
+* **Fase 1: Cimientos de Red y Sistema (SRI + ASO).**
+    * Despliegue de máquinas virtuales y configuración de interfaces de red.
+    * Instalación del **Gateway OPNsense/Linux** con reglas de *iptables* y NAT.
+    * Configuración de servicios básicos: **DHCP** para clientes y **DNS Split** (diferente resolución dentro y fuera).
+    * Levantamiento del túnel **WireGuard** entre Local y AWS.
 
-* **Fase 2: Containerización de Servicios (IAW + ASGBD).**
-    * Instalación de **Docker Engine** en el Servidor de Aplicaciones.
-    * Despliegue del stack `docker-compose.yml`:
-        * **OpenLDAP** + **phpLDAPadmin** (Gestión visual de usuarios).
-        * **Nextcloud** + **MariaDB** (Almacenamiento y BBDD).
-    * Vinculación de Nextcloud con LDAP para login único.
+* **Fase 2: Persistencia y Datos (ASGBD).**
+    * Despliegue del contenedor de Base de Datos (MariaDB).
+    * **Tarea clave:** Creación de usuarios específicos (`nextcloud_user`, `admin_backup`) con privilegios mínimos.
+    * Implementación de un script cron para **Backups diarios** de la BBDD hacia un volumen externo.
 
-* **Fase 3: Hibridación y Exposición Segura (AWS).**
-    * Despliegue de instancia EC2 en AWS (Capa Gratuita).
-    * Configuración de **WireGuard Site-to-Site**: AWS y la oficina se ven como si estuvieran en el mismo cable.
-    * Configuración de **Nginx Proxy Manager** (o Caddy) en AWS: Recibe el tráfico web público (HTTPS con Let's Encrypt automático) y lo deriva por el túnel VPN hasta el Docker local. *Resultado: La IP de la oficina nunca se expone.*
+* **Fase 3: Aplicaciones y Web (IAW).**
+    * Orquestación de contenedores con **Docker Compose**.
+    * Despliegue de **Nextcloud** conectado a la BBDD de la Fase 2.
+    * Configuración del **Proxy Inverso en AWS** para dar salida pública a los servicios internos bajo dominio seguro (HTTPS).
 
-* **Fase 4: Observabilidad y Automatización (SAD).**
-    * Despliegue de **Prometheus** y **Grafana** en contenedores.
-    * Configuración de "Exporters" en los nodos para medir CPU/RAM.
-    * **Workflow de n8n**: Webhook de alerta -> Proceso de lógica (¿Es crítico?) -> Envío de mensaje a Telegram del SysAdmin.
+* **Fase 4: Seguridad y Observabilidad (SAD).**
+    * Hardening del servidor expuesto en AWS (SSH por llaves, cierre de puertos).
+    * Despliegue del stack **Prometheus + Grafana**.
+    * Configuración de **n8n** para recibir alertas del sistema (ej: "Espacio en disco > 90%").
+
+* **Fase 5: Documentación y Entrega (IPE II).**
+    * Redacción del manual de contingencia.
+    * Presentación del diagrama final de arquitectura.
 
 ---
