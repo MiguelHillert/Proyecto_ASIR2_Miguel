@@ -30,15 +30,16 @@ Para contextualizar el proyecto en un entorno real, se ha seleccionado el perfil
 
 El escenario de trabajo parte de una situación habitual en el sector: la empresa ha sufrido micro-cortes en sus servicios y dificultades para gestionar el teletrabajo seguro de sus empleados. El proyecto no consiste en crear la empresa desde cero, sino en actuar como el **Departamento de Sistemas (IT)** que debe diseñar una nueva infraestructura interna (Intranet, Servidores de Pruebas y Almacenamiento) para solucionar la deuda técnica acumulada y profesionalizar el despliegue de sus aplicaciones.
 
-### 3. Identificación de necesidades tecnológicas
+### 3. Identificación de necesidades tecnológicas (Enfoque Innovador)
 
-Tras simular una auditoría técnica basada en los estándares del sector, se detectan las siguientes necesidades críticas para la operatividad de la consultora:
+La auditoría de seguridad revela que la empresa tiene servidores antiguos en la oficina que deben ser accesibles desde internet, pero la conexión a internet de la sede carece de IP fija y seguridad perimetral moderna. Para solucionar esto sin migrar todos los datos (costoso) ni exponer la red local (peligroso), se propone una arquitectura de **"Nube Híbrida con Túnel Inverso"**.
 
-* **Servicios de Red (SRI):** La red actual es plana. Se requiere segmentación mediante VLANs (Desarrollo, Administración, Invitados), un servicio DHCP/DNS robusto y acceso remoto vía VPN para los desarrolladores.
-* **Sistemas Operativos (ASO):** Estandarización de servidores. Se necesita un Directorio Activo (o LDAP en Linux) para centralizar la gestión de los 50+ usuarios y equipos, aplicando políticas de grupo (GPO) restrictivas.
-* **Aplicaciones Web (IAW):** Despliegue de herramientas internas de productividad. Específicamente, una nube privada (*Nextcloud*) para eliminar el uso de "Shadow IT" (Dropbox personal) y un servidor web para alojar la Wiki interna de documentación.
-* **Bases de Datos (ASGBD):** Implementación de un servidor de bases de datos dedicado (MySQL/MariaDB) que soporte los entornos de "Staging" (pruebas) de los desarrolladores, separado del entorno de producción.
-* **Seguridad y Alta Disponibilidad (SAD):** Dado que la empresa ofrece servicios 24/7, es imperativo implementar un clúster de Alta Disponibilidad para la web corporativa y un cortafuegos perimetral (Pfsense/Opnsense) con detección de intrusos (IDS).
+Las necesidades técnicas se han elevado para superar los estándares básicos:
+
+* **Conectividad y Seguridad (SRI):** En lugar de las VPNs tradicionales (lentas y pesadas), se requiere implementar **WireGuard**, un protocolo de nueva generación más rápido y auditable. Se necesita un **VPS en la nube (AWS)** que actúe de "cara pública", limpiando el tráfico malicioso antes de que llegue a la oficina mediante un **Proxy Inverso**.
+* **Gestión de Identidad (ASO):** Centralización de usuarios con **OpenLDAP**, pero integrando una gestión moderna. Se requiere que los servicios web lean estos usuarios para evitar duplicidad de contraseñas.
+* **Despliegue de Aplicaciones (IAW):** Para maximizar los recursos del hardware limitado, se abandonará la virtualización tradicional por servidor en favor de la **Containerización (Docker)**. Se desplegará **Nextcloud** y una Wiki interna utilizando *Docker Compose*, facilitando las copias de seguridad y la actualización.
+* **Monitorización Inteligente (SAD):** Se sustituye la revisión manual de logs por un stack de observabilidad: **Prometheus** (métricas) + **Grafana** (visualización). El elemento diferenciador será la **automatización de respuesta con n8n**: si un servicio cae, n8n recibirá la alerta y notificará automáticamente al equipo de guardia vía Telegram/Email, cerrando el ciclo de incidente.
 
 ### 4. Oportunidades y viabilidad del proyecto
 
@@ -54,9 +55,28 @@ Adicionalmente, se considerará la **Ley de Propiedad Intelectual**, asegurando 
 
 ### 6. Guion inicial del proyecto
 
-El despliegue técnico se estructurará en las siguientes fases:
+El proyecto implementará un esquema de "Servicios Ocultos" protegidos por la nube:
 
-* **Fase 1: Infraestructura Base (ASO + SRI).** Instalación de hipervisores, configuración de red, segmentación (VLANs), servicios DHCP/DNS y configuración del Firewall perimetral.
-* **Fase 2: Despliegue de Servicios (IAW + ASGBD).** Instalación y bastionado del servidor de Base de Datos. Despliegue de la aplicación "Nextcloud" y la Intranet corporativa sobre pila LAMP.
-* **Fase 3: Aseguramiento (SAD).** Configuración de clúster HA (Alta Disponibilidad) para el servidor web, implementación de RAID software y programación de scripts de Backup automáticos (locales y remotos).
-* **Fase 4: Documentación y Entrega.** Elaboración de manuales de explotación, plan de recuperación ante desastres y documentación técnica final.
+* **Fase 1: El Bastión Local (SRI + ASO).**
+    * Despliegue de **OPNsense** (o servidor Linux endurecido) en VirtualBox como Gateway.
+    * Segmentación de red: DMZ interna y Red de Servicios.
+    * Configuración de políticas de Firewall estrictas (Deny All por defecto).
+
+* **Fase 2: Containerización de Servicios (IAW + ASGBD).**
+    * Instalación de **Docker Engine** en el Servidor de Aplicaciones.
+    * Despliegue del stack `docker-compose.yml`:
+        * **OpenLDAP** + **phpLDAPadmin** (Gestión visual de usuarios).
+        * **Nextcloud** + **MariaDB** (Almacenamiento y BBDD).
+    * Vinculación de Nextcloud con LDAP para login único.
+
+* **Fase 3: Hibridación y Exposición Segura (AWS).**
+    * Despliegue de instancia EC2 en AWS (Capa Gratuita).
+    * Configuración de **WireGuard Site-to-Site**: AWS y la oficina se ven como si estuvieran en el mismo cable.
+    * Configuración de **Nginx Proxy Manager** (o Caddy) en AWS: Recibe el tráfico web público (HTTPS con Let's Encrypt automático) y lo deriva por el túnel VPN hasta el Docker local. *Resultado: La IP de la oficina nunca se expone.*
+
+* **Fase 4: Observabilidad y Automatización (SAD).**
+    * Despliegue de **Prometheus** y **Grafana** en contenedores.
+    * Configuración de "Exporters" en los nodos para medir CPU/RAM.
+    * **Workflow de n8n**: Webhook de alerta -> Proceso de lógica (¿Es crítico?) -> Envío de mensaje a Telegram del SysAdmin.
+
+---
