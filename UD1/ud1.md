@@ -201,8 +201,7 @@ Al tratar con Inteligencia Artificial y datos masivos, el cumplimiento normativo
 - [Diagramas e imágenes](./img/)
 
   ## Bibliografía / Webgrafía 
-- Autor1, Título del libro o artículo, Editorial/Año.
-- **Informe Mercado Trabajo Sevilla 2024:** [📂 Ver documento local](https://www.google.com/search?q=./documentos/08_Informe_SEPE_Mercado_IT.pdf) (Referencia a la dificultad de cobertura de vacantes técnicas en Tabla 32).
+
 - **Web Corporativa OGA:** [🔗 oga.ai](https://oga.ai)
 - **Parque Vega del Rey:** [🔗 Información del Parque](https://www.google.com/search?q=parque+empresarial+vega+del+rey)
 - **PCT Cartuja:** [🔗 Informe de Actividad](https://www.pctcartuja.es/)
