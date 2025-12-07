@@ -9,9 +9,9 @@
 ![Inglés Técnico](https://img.shields.io/badge/Inglés-INGLÉS-yellow)
 ![Escalabilidad y Cloud](https://img.shields.io/badge/Infraestructura-Cloud%20%26%20Escalable-purple)
 
-<p align="center">
-  <img src=src="UD1/img/ia.png"  width="600">
-</p>
+
+  <img src=src="UD1/img/ia.png" align="center" width="600">
+
 
 
 
