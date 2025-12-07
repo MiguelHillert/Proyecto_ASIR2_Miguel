@@ -136,7 +136,7 @@ Al tratar con Inteligencia Artificial y datos masivos, el cumplimiento normativo
         │     └─────────────────────────────────────┘             │
         │                     │                                   │
         │                     ▼                                   │
-        │  2. Gestión de Datos (ASGBD)                            │
+        │  2. Gestión de Datos (Administración)                            │
         │     ┌─────────────────────────────────────┐             │
         │     │ • Usuarios BBDD (Privilegios mín)   │             │
         │     │ • Backups Automáticos Cifrados      │             │
