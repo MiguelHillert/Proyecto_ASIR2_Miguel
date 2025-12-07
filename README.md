@@ -10,7 +10,7 @@
 ![Escalabilidad y Cloud](https://img.shields.io/badge/Infraestructura-Cloud%20%26%20Escalable-purple)
 
 
-<img src="img/ia.png" alt="Descripción" width="700">
+<img src="UD1/img/ia.png" alt="Descripción" width="700">
 
 
 ## Nombre del alumno:Miguel Hillert Jimenez
