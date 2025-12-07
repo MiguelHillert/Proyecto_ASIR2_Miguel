@@ -1,5 +1,8 @@
 [Volver al índice general](../README.md)
 
+<img src="img/ia.png" alt="Descripción" width="700">
+
+
 
 -----
 
@@ -12,9 +15,6 @@
 - [ ] **[4. Oportunidades y viabilidad del proyecto](#4-oportunidades-y-viabilidad-del-proyecto)**
 - [ ] **[5. Obligaciones legales y normativas](#5-obligaciones-legales-y-normativas)**
 - [ ] **[6. Guion inicial del proyecto](#6-guion-inicial-del-proyecto)**
-
-
-<img src="img/ia.png" alt="Descripción" width="700">
 
 
 
