@@ -208,7 +208,8 @@ Al tratar con Inteligencia Artificial y datos masivos, el cumplimiento normativo
 - **Web Corporativa OGA:** [🔗 oga.ai](https://oga.ai)
 - **Parque Vega del Rey:** [🔗 Información del Parque](https://www.google.com/search?q=parque+empresarial+vega+del+rey)
 - **PCT Cartuja:** [🔗 Informe de Actividad](https://www.pctcartuja.es/)
-
+- **Seguridad:** [🔗 Informe BOE Seguridad](https://www.boe.es/buscar/act.php?id=BOE-A-2022-7191)
+- **Reglamento Europeo de IA:** [🔗 Informe BOE IA](https://www.boe.es/buscar/doc.php?id=DOUE-L-2024-81079)
 
 
 
