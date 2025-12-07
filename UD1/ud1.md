@@ -26,7 +26,7 @@ Voy a centrar mi análisis en el eje **Cartuja - Vega del Rey**, considerado el 
 
 [cite_start]La relevancia de este entorno se confirma con los datos más recientes del **Informe de Evaluación y Desarrollo Tecnológico de Sevilla TechPark 2024** (ver [📄 Informe de Resultados](documentos/Informe-Resultados_Sevilla-TechPark_DEF.pdf)), que destaca una facturación agregada de **5.513 millones de euros** (un 13,7% más que el año anterior) y un ecosistema de **575 entidades** tecnológicas[cite: 3520].
 
-Antes de entrar en detalle, es vital contextualizar la situación laboral con datos oficiales. Según el **Informe del Mercado de Trabajo de Sevilla 2024 (Datos 2023)** del SEPE (ver [📄 Informe Mercado Trabajo](https://www.google.com/search?q=./documentos/Mercado%2520de%2520Trabajo%25202024%2520Sevilla%2520\(Datos%25202023\).pdf)):
+Antes de entrar en detalle, es vital contextualizar la situación laboral con datos oficiales. Según el **Informe del Mercado de Trabajo de Sevilla 2024 (Datos 2023)** del SEPE (ver [📄 Informe Mercado Trabajo](documentos/Mercado de Trabajo 2024 Sevilla (Datos 2023).pdf)):
 
   * **Estabilidad y Demanda:** Existe una dificultad real para cubrir vacantes técnicas. [cite_start]La **Tabla 32** del informe destaca explícitamente la escasez de candidatos para el perfil de **"Diseñadores y administradores de bases de datos"** y ocupaciones técnicas relacionadas con la informática[cite: 3222].
   * **Calidad del Empleo:** El informe señala el crecimiento sostenido de la contratación indefinida en el sector TIC, justificando la viabilidad laboral de la especialización propuesta en este proyecto.
