@@ -1,85 +1,192 @@
 [Volver al índice general](../README.md)
 
+
+
+-----
+
 # UD1 – Análisis del entorno y detección de necesidades tecnológicas
 
 ## Índice de apartados
 
-- [ ] **1. Análisis del sector tecnológico**
-- [ ] **2. Selección de la empresa o contexto de trabajo**
-- [ ] **3. Identificación de necesidades tecnológicas**
-- [ ] **4. Oportunidades y viabilidad del proyecto**
-- [ ] **5. Obligaciones legales y normativas**
-- [ ] **6. Guion inicial del proyecto**
+1.  [Análisis del sector tecnológico](https://www.google.com/search?q=%231-an%C3%A1lisis-del-sector-tecnol%C3%B3gico)
+2.  [Selección de la empresa o contexto de trabajo](https://www.google.com/search?q=%232-selecci%C3%B3n-de-la-empresa-o-contexto-de-trabajo)
+3.  [Identificación de necesidades tecnológicas](https://www.google.com/search?q=%233-identificaci%C3%B3n-de-necesidades-tecnol%C3%B3gicas)
+4.  [Oportunidades y viabilidad del proyecto](https://www.google.com/search?q=%234-oportunidades-y-viabilidad-del-proyecto)
+5.  [Obligaciones legales y normativas](https://www.google.com/search?q=%235-obligaciones-legales-y-normativas)
+6.  [Guion inicial del proyecto](https://www.google.com/search?q=%236-guion-inicial-del-proyecto)
 
-## Enlaces a recursos de la unidad
+-----
 
-- [Documentos de la unidad (Estudios de mercado y Normativa)](./documentos/)
-- [Diagramas e imágenes (Mapa de red y DAFO)](./img/)
+### 1\. Análisis del sector tecnológico
 
----
+Voy a centrar mi análisis en el eje **Cartuja - Vega del Rey**, considerado el verdadero pulmón tecnológico de Andalucía. Aunque el PCT Cartuja es el núcleo histórico, el Parque Empresarial Vega del Rey (Camas) funciona como su extensión natural de "alto rendimiento", albergando sedes corporativas que requieren una infraestructura de sistemas crítica.
 
-### 1. Análisis del sector tecnológico
+Antes de entrar en detalle, es vital contextualizar la situación con datos oficiales. Según el **Informe del Mercado de Trabajo de Sevilla 2024 (Datos 2023) del SEPE**:
 
-El proyecto se sitúa geográficamente en el **Parque Científico y Tecnológico Cartuja (Sevilla TechPark)**, el principal motor tecnológico de Andalucía con una facturación agregada superior a los 4.000 millones de euros. El análisis del sector TIC en esta zona muestra una transición del modelo tradicional de "Outsourcing" hacia el desarrollo de producto propio y servicios de alto valor añadido (IA, Big Data y Ciberseguridad).
+  * [cite_start]**Estabilidad y Demanda:** Existe una dificultad real para cubrir vacantes técnicas debido a la falta de candidatos cualificados y competencias técnicas específicas, especialmente en roles de gestión de datos y sistemas[cite: 2476, 2481, 2491].
+  * **Calidad del Empleo:** El sector tecnológico presenta una estabilidad superior a la media y es uno de los motores de contratación indefinida, siendo un refugio seguro frente a la temporalidad que afecta a otros sectores.
 
-Sin embargo, los informes del sector (como el del *Círculo de Empresarios de Cartuja*) señalan un reto común: muchas empresas consolidadas crecieron rápidamente con infraestructuras "on-premise" que ahora resultan rígidas e inseguras frente a las nuevas amenazas de ransomware. Existe, por tanto, una demanda real y urgente de perfiles de administración de sistemas capaces de modernizar estas arquitecturas heredadas, garantizando la seguridad perimetral y la alta disponibilidad que exigen los clientes internacionales.
+En este entorno de Vega del Rey, no hablamos de micro-pymes, sino de grandes jugadores:
 
-### 2. Selección de la empresa o contexto de trabajo
+  * **Ayesa:** Gigante de ingeniería y tecnología.
+  * **Vueling Innovation Lab:** Centro de desarrollo digital de la aerolínea.
+  * **OGA (oga.ai):** La empresa en la que centraré mi proyecto.
 
-Para contextualizar el proyecto en un entorno real, se ha seleccionado el perfil de una **Consultora de Desarrollo de Software (Software Factory)** de tamaño mediano, con sede en el edificio *Centris* o *Pabellón de Italia* del PCT Cartuja. Este tipo de empresa (comparable a firmas reales de la zona como *Soltel* o *Guadaltech*) maneja datos sensibles de terceros y cuenta con equipos de desarrollo que requieren acceso remoto constante.
+### 2\. Selección de la empresa
 
-El escenario de trabajo parte de una situación habitual en el sector: la empresa ha sufrido micro-cortes en sus servicios y dificultades para gestionar el teletrabajo seguro de sus empleados. El proyecto no consiste en crear la empresa desde cero, sino en actuar como el **Departamento de Sistemas (IT)** que debe diseñar una nueva infraestructura interna (Intranet, Servidores de Pruebas y Almacenamiento) para solucionar la deuda técnica acumulada y profesionalizar el despliegue de sus aplicaciones.
+**Empresa seleccionada -\> OGA (oga.ai)**
 
-### 3. Identificación de necesidades tecnológicas (Mapeo Curricular)
+Ubicada en el Edificio Vega del Rey 1, **OGA** no es una consultora tradicional; es una "boutique" de **Inteligencia Artificial y Optimización de Procesos**. Trabajan con datos críticos para optimizar logística, industria y retail para clientes de gran calibre.
 
-La auditoría técnica ha desglosado las necesidades del proyecto vinculándolas directamente a las competencias requeridas para la modernización de la infraestructura:
+He elegido esta empresa porque su dependencia de la infraestructura es total. Si sus servidores de cálculo fallan, los algoritmos de IA no entrenan y el cliente pierde dinero. Esto eleva el nivel del proyecto: no se trata solo de mantener una red de oficina, sino de sostener una infraestructura de **Datos y Alto Rendimiento**.
 
-* **[ASGBD] Gestión de Datos Críticos:** La empresa no puede depender de bases de datos por defecto. Se requiere desplegar un servidor **MariaDB/MySQL** optimizado. No basta con la instalación; es imperativo configurar **políticas de usuarios (GRANTS)** para separar los permisos de la aplicación Nextcloud de los del administrador, así como programar **scripts de exportación lógica (mysqldump)** automatizados para evitar la pérdida de datos.
-* **[ASO] Administración de Sistemas:** Se necesita estandarizar los servidores (Linux Ubuntu Server). El reto principal es la **gestión de identidades centralizada**: implementación de scripts en *Bash* y configuración de **OpenLDAP** para que los usuarios tengan *roaming profile* (su /home les sigue) y cuotas de disco asignadas.
-* **[SRI] Interconexión Híbrida:** La red local debe conectarse con la nube. Se requiere configurar un **Servidor VPN (WireGuard)** que actúe de túnel transparente. Además, se debe implementar un servidor **DNS interno (Bind9 o Unbound)** para que las direcciones internas (`intranet.empresa.lan`) se resuelvan correctamente tanto en la oficina como a través de la VPN.
-* **[IAW] Despliegue de Aplicaciones:** Abandonar las instalaciones monolíticas. Se requiere "dockerizar" la intranet corporativa (**Nextcloud** y Wiki). Esto implica configurar un **Proxy Inverso (Nginx/Traefik)** en la nube (AWS) que gestione los certificados SSL (HTTPS) y enrute el tráfico hacia los contenedores locales de forma segura.
-* **[SAD] Seguridad y Monitorización:** La alta disponibilidad se simulará mediante la capacidad de recuperación rápida. Se necesita un sistema de **monitorización activa (Prometheus + Grafana)** que vigile el estado de los discos y la carga de la CPU. La seguridad perimetral se reforzará con **Fail2Ban** en el nodo expuesto a internet para mitigar ataques de fuerza bruta.
-* **[IPE II] Enfoque Profesional:** El proyecto debe simular un entorno de producción real, priorizando el uso de herramientas demandadas en el mercado laboral (Docker, AWS, n8n) y generando documentación técnica que justifique la toma de decisiones (Soft Skills).
+### 3\. Identificación de necesidades tecnológicas
 
-### 4. Oportunidades y viabilidad del proyecto
+En el entorno de la Inteligencia Artificial aplicada, existe una brecha operativa importante: los científicos de datos desarrollan algoritmos complejos, pero a menudo carecen de la infraestructura robusta necesaria para ejecutarlos de forma segura y eficiente en producción.
 
-Este proyecto es altamente viable tanto técnica como económicamente. Al utilizar tecnologías *Open Source* (Linux, Apache, KVM), el coste de licencias se minimiza, permitiendo destinar el presupuesto a hardware y formación. Para la empresa, esta modernización supone una ventaja competitiva directa: poder certificar ante sus clientes que cumplen con estándares de seguridad ISO 27001, algo cada vez más exigido en licitaciones públicas y grandes contratos.
+Basándonos en la realidad del mercado laboral de Sevilla descrita en el informe del SEPE, el proyecto se centrará en cubrir tres necesidades críticas que las empresas tienen dificultades para resolver:
 
-Desde la perspectiva del alumno (**IPE II**), este escenario permite entrenar competencias transversales de "DevOps" y "SysAdmin". Resolver problemas de integración entre la base de datos, el servidor web y la seguridad perimetral simula fielmente los desafíos diarios de un administrador de sistemas en el mercado laboral sevillano actual.
+  * **Profesionalización y Gobierno del Dato:**
+    [cite_start]El informe del SEPE destaca explícitamente en su Tabla 32 la dificultad para cubrir vacantes de **"Diseñadores y administradores de bases de datos"** por falta de candidatos[cite: 2491, 2500]. En OGA, el dato es el activo más valioso. La necesidad es migrar de sistemas de almacenamiento dispersos a un servidor de base de datos centralizado (**MariaDB**), configurado con políticas de usuarios estrictas y copias de seguridad automatizadas para garantizar que la información crítica nunca se pierda.
 
-### 5. Obligaciones legales y normativas
+  * **Continuidad Operativa y Monitorización:**
+    Los procesos de entrenamiento de IA son intensivos y costosos. Una caída del sistema no detectada a tiempo implica grandes pérdidas. Se requiere implementar un sistema de **observabilidad en tiempo real** (utilizando stacks como Grafana) que actúe como un "signo vital" del servidor, alertando preventivamente sobre saturación de recursos antes de que ocurra un fallo crítico. Esto responde a la demanda de perfiles capaces de mantener la alta disponibilidad de los sistemas.
 
-El proyecto se regirá estrictamente por el **RGPD (Reglamento General de Protección de Datos)**. Al gestionar una base de datos de empleados y clientes, se implementarán medidas de *Privacy by Design*: cifrado de discos, políticas de contraseñas fuertes y logs de acceso inalterables.
+  * **Acceso Remoto Seguro (Perímetro Híbrido):**
+    La flexibilidad laboral es clave, pero exponer servidores de cálculo a internet es un riesgo inasumible. La solución técnica requerida es el despliegue de un túnel **VPN (WireGuard)**. Esto permite a los ingenieros acceder a la potencia de cálculo de la oficina desde cualquier ubicación de forma transparente y cifrada, sin comprometer la seguridad perimetral de la empresa.
 
-Adicionalmente, se considerará la **Ley de Propiedad Intelectual**, asegurando que todo el software desplegado tenga licencias compatibles (GPL, Apache, MIT) para uso comercial. En el ámbito de la seguridad de la información, se seguirán las guías del **Esquema Nacional de Seguridad (ENS)** en nivel básico, como buena práctica recomendada para proveedores tecnológicos de la administración pública.
+### 4\. Oportunidades y viabilidad del proyecto
 
-### 6. Guion inicial del proyecto
+La viabilidad técnica es total y el coste de licencias es nulo. La propuesta se basa en sustituir procesos manuales por un stack tecnológico *Open Source* robusto: **Linux (Ubuntu Server), Docker y Python**.
 
-El cronograma de trabajo se organiza para cubrir todas las áreas técnicas de forma secuencial:
+Para OGA, la rentabilidad es inmediata:
 
-* **Fase 1: Cimientos de Red y Sistema (SRI + ASO).**
-    * Despliegue de máquinas virtuales y configuración de interfaces de red.
-    * Instalación del **Gateway OPNsense/Linux** con reglas de *iptables* y NAT.
-    * Configuración de servicios básicos: **DHCP** para clientes y **DNS Split** (diferente resolución dentro y fuera).
-    * Levantamiento del túnel **WireGuard** entre Local y AWS.
+1.  **Ahorro de tiempo:** Un despliegue automatizado libera a los desarrolladores senior de tareas repetitivas.
+2.  **Seguridad:** Al usar contenedores aislados, se reduce el riesgo de que un error en una librería rompa el servidor entero.
+3.  **Escalabilidad:** Si el proyecto crece, replicar un contenedor Docker es instantáneo.
 
-* **Fase 2: Persistencia y Datos (ASGBD).**
-    * Despliegue del contenedor de Base de Datos (MariaDB).
-    * **Tarea clave:** Creación de usuarios específicos (`nextcloud_user`, `admin_backup`) con privilegios mínimos.
-    * Implementación de un script cron para **Backups diarios** de la BBDD hacia un volumen externo.
+### 5\. Obligaciones legales y normativas
 
-* **Fase 3: Aplicaciones y Web (IAW).**
-    * Orquestación de contenedores con **Docker Compose**.
-    * Despliegue de **Nextcloud** conectado a la BBDD de la Fase 2.
-    * Configuración del **Proxy Inverso en AWS** para dar salida pública a los servicios internos bajo dominio seguro (HTTPS).
+Al tratar con Inteligencia Artificial y datos masivos, el cumplimiento normativo es el pilar del proyecto:
 
-* **Fase 4: Seguridad y Observabilidad (SAD).**
-    * Hardening del servidor expuesto en AWS (SSH por llaves, cierre de puertos).
-    * Despliegue del stack **Prometheus + Grafana**.
-    * Configuración de **n8n** para recibir alertas del sistema (ej: "Espacio en disco > 90%").
+  * **RGPD (Reglamento General de Protección de Datos):** OGA trata datos que pueden ser personales o sensibles de sus clientes. Los backups deben estar cifrados y los accesos auditados (Logs inmutables).
+  * **AI Act (Reglamento Europeo de IA):** Aunque es una normativa reciente, exige trazabilidad y transparencia en los sistemas de IA. Nuestra infraestructura debe permitir saber *quién* desplegó *qué* versión del modelo y *cuándo*.
+  * **ENS (Esquema Nacional de Seguridad):** Necesario para garantizar la integridad y disponibilidad de los servicios, especialmente si colaboran con entidades públicas.
 
-* **Fase 5: Documentación y Entrega (IPE II).**
-    * Redacción del manual de contingencia.
-    * Presentación del diagrama final de arquitectura.
+### 6\. Guion inicial del proyecto
 
----
+```text
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                       PROYECTO INFRAESTRUCTURA OGA.AI                       │
+└─────────────────────────────────┬───────────────────────────────────────────┘
+                                  │
+                                  ▼
+        ┌─────────────────────────────────────────────────────────┐
+        │           FASE 1: Cimientos y Contenedorización         │
+        │                                                         │
+        ├─────────────────────────────────────────────────────────┤
+        │                                                         │
+        │  1. Host / Entorno Base                                 │
+        │     ┌─────────────────────────────────────┐             │
+        │     │ • Linux Server (Ubuntu)             │             │
+        │     │ • Hardening SSH & Usuarios          │             │
+        │     │ • Docker Engine & Compose           │             │
+        │     └─────────────────────────────────────┘             │
+        │                     │                                   │
+        │                     ▼                                   │
+        │  2. Empaquetado de Servicios                            │
+        │     ┌─────────────────────────────────────┐             │
+        │     │ • Dockerfile App (Python/API)       │             │
+        │     │ • Dockerfile BBDD (MariaDB)         │             │
+        │     └─────────────────────────────────────┘             │
+        │                     │                                   │
+        │                     ▼                                   │
+        │  3. Automatización (Scripting)                          │
+        │     ┌─────────────────────────────────────┐             │
+        │     │ • Script Bash/Python "Deploy"       │             │
+        │     │ • Gestión de variables de entorno   │             │
+        │     └─────────────────────────────────────┘             │
+        └─────────────────────────┬───────────────────────────────┘
+                                  │
+                                  ▼
+        ┌─────────────────────────────────────────────────────────┐
+        │           FASE 2: Seguridad y Datos Críticos            │
+        │                                                         │
+        ├─────────────────────────────────────────────────────────┤
+        │                                                         │
+        │  1. Red Segura y Acceso Remoto                          │
+        │     ┌─────────────────────────────────────┐             │
+        │     │ • WireGuard VPN (Acceso seguro)     │             │
+        │     │ • Firewall (UFW/Iptables)           │             │
+        │     │ • Segmentación de red Docker        │             │
+        │     └─────────────────────────────────────┘             │
+        │                     │                                   │
+        │                     ▼                                   │
+        │  2. Gestión de Datos (ASGBD)                            │
+        │     ┌─────────────────────────────────────┐             │
+        │     │ • Usuarios BBDD (Privilegios mín)   │             │
+        │     │ • Backups Automáticos Cifrados      │             │
+        │     │ • Volúmenes Persistentes            │             │
+        │     └─────────────────────────────────────┘             │
+        └─────────────────────────┬───────────────────────────────┘
+                                  │
+                                  ▼
+        ┌─────────────────────────────────────────────────────────┐
+        │          FASE 3: Observabilidad y Entrega               │
+        │                                                         │
+        ├─────────────────────────────────────────────────────────┤
+        │                                                         │
+        │  1. Monitorización Activa                               │
+        │     ┌─────────────────────────────────────┐             │
+        │     │ • Prometheus (Métricas)             │             │
+        │     │ • Node Exporter (Hardware)          │             │
+        │     └─────────────────────────────────────┘             │
+        │                     │                                   │
+        │                     ▼                                   │
+        │  2. Visualización                                       │
+        │     ┌─────────────────────────────────────┐             │
+        │     │ • Grafana Dashboard                 │             │
+        │     │ • Alertas (Telegram/Email)          │             │
+        │     └─────────────────────────────────────┘             │
+        │                     │                                   │
+        │                     ▼                                   │
+        │  3. Documentación Final                                 │
+        │     ┌─────────────────────────────────────┐             │
+        │     │ • Manual de Despliegue              │             │
+        │     │ • Plan de Contingencia (DRP)        │             │
+        │     │ • Diagrama de Arquitectura          │             │
+        │     └─────────────────────────────────────┘             │
+        └─────────────────────────┬───────────────────────────────┘
+                                  │
+                                  ▼
+                    ┌─────────────────────────────┐
+                    │     PROYECTO COMPLETADO     │
+                    └─────────────────────────────┘
+```
+
+#### Descripción de Fases
+
+**Fase 1: Cimientos y Contenedorización**
+
+  * **Host:** Preparación del servidor Linux con medidas de seguridad básicas.
+  * **Docker:** Creación de imágenes ligeras para la API de IA y la base de datos, asegurando que el entorno de desarrollo sea idéntico al de producción.
+  * **Automatización:** Creación de un script en Bash/Python que levante todo el entorno con un solo comando (`./deploy.sh`).
+
+**Fase 2: Seguridad y Datos Críticos**
+
+  * **Acceso:** Implementación de **WireGuard** para que los desarrolladores accedan de forma segura desde casa.
+  * **Datos:** Configuración experta de **MariaDB**, creando usuarios específicos y programando copias de seguridad automáticas para evitar pérdidas de datasets valiosos.
+
+**Fase 3: Observabilidad y Entrega**
+
+  * **Monitorización:** Despliegue del stack Prometheus + Grafana para ver en tiempo real si el servidor está saturado.
+  * **Documentación:** Entrega del repositorio GitHub con el código, manuales y el Plan de Recuperación ante Desastres.
+
+-----
+
+### Enlaces y Recursos
+
+  * **Informe Mercado Trabajo Sevilla 2024:** [📂 Ver documento local](https://www.google.com/search?q=./documentos/08_Informe_SEPE_Mercado_IT.pdf) (Referencia a la dificultad de cobertura de vacantes técnicas en Tabla 32).
+  * **Web Corporativa OGA:** [🔗 oga.ai](https://oga.ai)
+  * **Parque Vega del Rey:** [🔗 Información del Parque](https://www.google.com/search?q=parque+empresarial+vega+del+rey)
+  * **PCT Cartuja:** [🔗 Informe de Actividad](https://www.pctcartuja.es/)
