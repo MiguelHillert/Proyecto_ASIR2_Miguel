@@ -43,7 +43,7 @@ En el entorno de Vega del Rey, no hablamos de micro-pymes, sino de grandes jugad
 
 ### 2\. Selección de la empresa o contexto de trabajo
 
-**Empresa seleccionada -\> OGA (oga.ai)**
+**OGA (oga.ai)**
 
 <img src="img/oga.png" alt="Descripción" width="700">
 
