@@ -1,7 +1,5 @@
 [Volver al índice general](../README.md)
 
-<img src="img/ia.png" alt="Descripción" width="700">
-
 
 
 -----
