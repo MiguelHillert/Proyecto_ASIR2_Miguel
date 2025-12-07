@@ -1,6 +1,5 @@
 [Volver al índice general](../README.md)
 
-<img src="img/vega_del_rey.jpg" alt="Descripción" width="700">
 
 -----
 
@@ -19,6 +18,9 @@
 
 
 -----
+
+<img src="img/vega_del_rey.jpg" alt="Descripción" width="700">
+
 
 ### 1\. Análisis del sector tecnológico
 
