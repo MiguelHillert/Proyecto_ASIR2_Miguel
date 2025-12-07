@@ -12,7 +12,7 @@
 
 
 <p align="center">
-  <img src="UD1/img/ia.png" alt="Logo AI" width="1000">
+  <img src="UD1/img/ia.png" alt="Logo AI" width="850">
 </p>
 
 
