@@ -1,6 +1,6 @@
 [Volver al índice general](../README.md)
 
-<img src="img/vega_del_rey.jpg" alt="Descripción" width="400">
+<img src="img/vega_del_rey.jpg" alt="Descripción" width="700">
 
 -----
 
