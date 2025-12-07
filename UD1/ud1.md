@@ -14,15 +14,15 @@
 - [ ] **[6. Guion inicial del proyecto](#6-guion-inicial-del-proyecto)**
 
 
+<img src="img/ia.png" alt="Descripción" width="700">
 
 
 
 -----
 
-<img src="img/vega_del_rey.jpg" alt="Descripción" width="700">
-
-
 ### 1\. Análisis del sector tecnológico
+
+<img src="img/vega_del_rey.jpg" alt="Descripción" width="700">
 
 Voy a centrar mi análisis en el eje **Cartuja - Vega del Rey**, considerado el verdadero pulmón tecnológico de Andalucía. Aunque el PCT Cartuja es el núcleo histórico, el Parque Empresarial Vega del Rey (Camas) funciona como su extensión natural de "alto rendimiento", albergando sedes corporativas que requieren una infraestructura de sistemas crítica.
 
@@ -44,6 +44,9 @@ En el entorno de Vega del Rey, no hablamos de micro-pymes, sino de grandes jugad
 ### 2\. Selección de la empresa o contexto de trabajo
 
 **Empresa seleccionada -\> OGA (oga.ai)**
+
+<img src="img/oga.png" alt="Descripción" width="700">
+
 
 Ubicada en el entorno de innovación de Sevilla, **OGA** no es una consultora tradicional; es una "boutique" especializada en **Inteligencia Artificial e Investigación Operativa** para eficientar procesos críticos en sectores como energía, logística y defensa.
 
