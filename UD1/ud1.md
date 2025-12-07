@@ -24,57 +24,57 @@
 
 Voy a centrar mi análisis en el eje **Cartuja - Vega del Rey**, considerado el verdadero pulmón tecnológico de Andalucía. Aunque el PCT Cartuja es el núcleo histórico, el Parque Empresarial Vega del Rey (Camas) funciona como su extensión natural de "alto rendimiento", albergando sedes corporativas que requieren una infraestructura de sistemas crítica.
 
-Antes de entrar en detalle, es vital contextualizar la situación con datos oficiales. Según el **Informe del Mercado de Trabajo de Sevilla 2024 (Datos 2023) del SEPE**:
+[cite_start]La relevancia de este entorno se confirma con los datos más recientes del **Informe de Evaluación y Desarrollo Tecnológico de Sevilla TechPark 2024** [cite: 741][cite_start], que destaca cómo el parque factura más de 5.500 millones de euros y emplea a más de 31.000 personas, consolidándose como motor económico regional[cite: 822].
 
-  * [cite_start]**Estabilidad y Demanda:** Existe una dificultad real para cubrir vacantes técnicas debido a la falta de candidatos cualificados y competencias técnicas específicas, especialmente en roles de gestión de datos y sistemas[cite: 2476, 2481, 2491].
-  * **Calidad del Empleo:** El sector tecnológico presenta una estabilidad superior a la media y es uno de los motores de contratación indefinida, siendo un refugio seguro frente a la temporalidad que afecta a otros sectores.
+Antes de entrar en detalle, es vital contextualizar la situación laboral con datos oficiales. [cite_start]Según el **Informe del Mercado de Trabajo de Sevilla 2024 (Datos 2023) del SEPE**[cite: 2701]:
 
-En este entorno de Vega del Rey, no hablamos de micro-pymes, sino de grandes jugadores:
+  * **Estabilidad y Demanda:** Existe una dificultad real para cubrir vacantes técnicas debido a la falta de candidatos cualificados. [cite_start]La **Tabla 32** del informe destaca explícitamente la escasez de candidatos para el perfil de **"Diseñadores y administradores de bases de datos"**[cite: 5187], validando la necesidad de reforzar las competencias del módulo ASGBD.
+  * [cite_start]**Calidad del Empleo:** El informe también señala a los **"Administradores de sistemas y redes"** como una ocupación con crecimiento sostenido y estabilidad, justificando la viabilidad laboral de la especialización propuesta en este proyecto[cite: 4975].
 
-  * **Ayesa:** Gigante de ingeniería y tecnología.
-  * **Vueling Innovation Lab:** Centro de desarrollo digital de la aerolínea.
-  * **OGA (oga.ai):** La empresa en la que centraré mi proyecto.
-
-### 2\. Selección de la empresa
+### 2\. Selección de la empresa o contexto de trabajo
 
 **Empresa seleccionada -\> OGA (oga.ai)**
 
-Ubicada en el Edificio Vega del Rey 1, **OGA** no es una consultora tradicional; es una "boutique" de **Inteligencia Artificial y Optimización de Procesos**. Trabajan con datos críticos para optimizar logística, industria y retail para clientes de gran calibre.
+[cite_start]Ubicada en el entorno de innovación de Sevilla, **OGA** no es una consultora tradicional; es una "boutique" especializada en **Inteligencia Artificial e Investigación Operativa** para eficientar procesos críticos en sectores como energía, logística y defensa[cite: 10].
 
-He elegido esta empresa porque su dependencia de la infraestructura es total. Si sus servidores de cálculo fallan, los algoritmos de IA no entrenan y el cliente pierde dinero. Esto eleva el nivel del proyecto: no se trata solo de mantener una red de oficina, sino de sostener una infraestructura de **Datos y Alto Rendimiento**.
+He elegido esta empresa por su relevancia y proyección:
+
+  * [cite_start]**Reconocimiento:** Ha sido galardonada recientemente en los **Premios de RSE y Sostenibilidad 2024** en la categoría PYME, lo que demuestra su compromiso no solo técnico, sino corporativo[cite: 1].
+  * [cite_start]**Innovación:** Cuenta con el apoyo del Grupo CÁTEDRA y lidera junto a la Universidad Rey Juan Carlos la Cátedra URJC-OGA en IA y Desarrollo Sostenible[cite: 11].
+  * [cite_start]**Dependencia de la Infraestructura:** Al trabajar con modelos complejos de IA para grandes corporaciones, su dependencia de una infraestructura de sistemas robusta, segura y de alta disponibilidad es total[cite: 13].
 
 ### 3\. Identificación de necesidades tecnológicas
 
 En el entorno de la Inteligencia Artificial aplicada, existe una brecha operativa importante: los científicos de datos desarrollan algoritmos complejos, pero a menudo carecen de la infraestructura robusta necesaria para ejecutarlos de forma segura y eficiente en producción.
 
-Basándonos en la realidad del mercado laboral de Sevilla descrita en el informe del SEPE, el proyecto se centrará en cubrir tres necesidades críticas que las empresas tienen dificultades para resolver:
+Basándonos en la realidad del mercado laboral descrita en el informe del SEPE y la naturaleza crítica de OGA, el proyecto cubrirá tres necesidades clave:
 
   * **Profesionalización y Gobierno del Dato:**
-    [cite_start]El informe del SEPE destaca explícitamente en su Tabla 32 la dificultad para cubrir vacantes de **"Diseñadores y administradores de bases de datos"** por falta de candidatos[cite: 2491, 2500]. En OGA, el dato es el activo más valioso. La necesidad es migrar de sistemas de almacenamiento dispersos a un servidor de base de datos centralizado (**MariaDB**), configurado con políticas de usuarios estrictas y copias de seguridad automatizadas para garantizar que la información crítica nunca se pierda.
+    [cite_start]Dado que el informe del SEPE alerta sobre la falta de **administradores de bases de datos**[cite: 5187], este proyecto implementará un servidor de base de datos centralizado (**MariaDB**). El objetivo es pasar de datos dispersos a un sistema con políticas de usuarios estrictas y copias de seguridad automatizadas, protegiendo el activo más valioso de OGA.
 
   * **Continuidad Operativa y Monitorización:**
-    Los procesos de entrenamiento de IA son intensivos y costosos. Una caída del sistema no detectada a tiempo implica grandes pérdidas. Se requiere implementar un sistema de **observabilidad en tiempo real** (utilizando stacks como Grafana) que actúe como un "signo vital" del servidor, alertando preventivamente sobre saturación de recursos antes de que ocurra un fallo crítico. Esto responde a la demanda de perfiles capaces de mantener la alta disponibilidad de los sistemas.
+    Los procesos de IA son intensivos. Una caída del sistema implica pérdidas directas. Se requiere un sistema de **observabilidad en tiempo real** (con Grafana/Prometheus) que actúe como "signo vital" del servidor, alertando sobre saturación de recursos antes de que ocurra un fallo crítico.
 
   * **Acceso Remoto Seguro (Perímetro Híbrido):**
-    La flexibilidad laboral es clave, pero exponer servidores de cálculo a internet es un riesgo inasumible. La solución técnica requerida es el despliegue de un túnel **VPN (WireGuard)**. Esto permite a los ingenieros acceder a la potencia de cálculo de la oficina desde cualquier ubicación de forma transparente y cifrada, sin comprometer la seguridad perimetral de la empresa.
+    La flexibilidad laboral es clave, pero exponer servidores de cálculo a internet es un riesgo. La solución técnica será un túnel **VPN (WireGuard)**, permitiendo a los ingenieros acceder a la potencia de cálculo de la oficina de forma cifrada y transparente.
 
 ### 4\. Oportunidades y viabilidad del proyecto
 
-La viabilidad técnica es total y el coste de licencias es nulo. La propuesta se basa en sustituir procesos manuales por un stack tecnológico *Open Source* robusto: **Linux (Ubuntu Server), Docker y Python**.
+La viabilidad técnica es total y el coste de licencias nulo al basarse en **Software Libre** (Linux, Docker, Python). [cite_start]Además, el proyecto se alinea con la **I Estrategia Cloud de Andalucía 2030** [cite: 58][cite_start], que fomenta el uso de infraestructuras digitales, la soberanía del dato y la adopción de modelos de nube híbrida en el tejido productivo andaluz[cite: 451].
 
 Para OGA, la rentabilidad es inmediata:
 
-1.  **Ahorro de tiempo:** Un despliegue automatizado libera a los desarrolladores senior de tareas repetitivas.
-2.  **Seguridad:** Al usar contenedores aislados, se reduce el riesgo de que un error en una librería rompa el servidor entero.
-3.  **Escalabilidad:** Si el proyecto crece, replicar un contenedor Docker es instantáneo.
+1.  **Ahorro de tiempo:** Automatización de despliegues para liberar a los desarrolladores.
+2.  **Seguridad:** Contenerización de aplicaciones para reducir riesgos.
+3.  **Escalabilidad:** Capacidad de replicar entornos de IA instantáneamente.
 
 ### 5\. Obligaciones legales y normativas
 
 Al tratar con Inteligencia Artificial y datos masivos, el cumplimiento normativo es el pilar del proyecto:
 
-  * **RGPD (Reglamento General de Protección de Datos):** OGA trata datos que pueden ser personales o sensibles de sus clientes. Los backups deben estar cifrados y los accesos auditados (Logs inmutables).
-  * **AI Act (Reglamento Europeo de IA):** Aunque es una normativa reciente, exige trazabilidad y transparencia en los sistemas de IA. Nuestra infraestructura debe permitir saber *quién* desplegó *qué* versión del modelo y *cuándo*.
-  * **ENS (Esquema Nacional de Seguridad):** Necesario para garantizar la integridad y disponibilidad de los servicios, especialmente si colaboran con entidades públicas.
+  * [cite_start]**Esquema Nacional de Seguridad (ENS):** Aunque OGA sea una empresa privada, al proveer servicios críticos que pueden afectar a terceros, el proyecto seguirá las guías del ENS (Nivel Básico/Medio) para el bastionado de servidores, asegurando la integridad y disponibilidad de los sistemas[cite: 21].
+  * [cite_start]**Reglamento Europeo de IA (AI Act):** El proyecto contempla desde el diseño la trazabilidad de los datos y la seguridad de los modelos, requisitos previos fundamentales para cumplir con la futura Ley de IA europea[cite: 23].
+  * **RGPD:** Se implementarán medidas técnicas como cifrado de backups y logs inmutables para proteger los datos personales.
 
 ### 6\. Guion inicial del proyecto
 
@@ -193,3 +193,17 @@ Al tratar con Inteligencia Artificial y datos masivos, el cumplimiento normativo
   * **Web Corporativa OGA:** [🔗 oga.ai](https://oga.ai)
   * **Parque Vega del Rey:** [🔗 Información del Parque](https://www.google.com/search?q=parque+empresarial+vega+del+rey)
   * **PCT Cartuja:** [🔗 Informe de Actividad](https://www.pctcartuja.es/)
+
+-----
+
+  * **[Mercado Laboral]** `Mercado de Trabajo 2024 Sevilla (Datos 2023).pdf`: Informe del SEPE que justifica la demanda de perfiles ASGBD y SysAdmin.
+  * **[Contexto Empresa]** `oga_noticia_info.pdf`: Información corporativa sobre OGA, sus premios y actividad en IA.
+  * **[Ecosistema]** `Informe-Resultados_Sevilla-TechPark_DEF.pdf`: Datos sobre el impacto económico y tecnológico de Cartuja/Sevilla.
+  * **[Estrategia Regional]** `Estrategia_Cloud_v.Publica.5r1.pdf`: Marco de referencia de la Junta de Andalucía para la adopción de Cloud y seguridad.
+  * **[Normativa]** `enlacesBOEyreferenciamercadosevilla.pdf`: Referencias legales al ENS y normativa europea.
+
+
+
+
+
+
