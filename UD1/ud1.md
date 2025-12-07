@@ -195,20 +195,22 @@ Al tratar con Inteligencia Artificial y datos masivos, el cumplimiento normativo
 
 -----
 
-### Enlaces y Recursos
+## Enlaces a recursos de la unidad
 
-  * **Informe Mercado Trabajo Sevilla 2024:** [📂 Ver documento local](https://www.google.com/search?q=./documentos/08_Informe_SEPE_Mercado_IT.pdf) (Referencia a la dificultad de cobertura de vacantes técnicas en Tabla 32).
-  * **Web Corporativa OGA:** [🔗 oga.ai](https://oga.ai)
-  * **Parque Vega del Rey:** [🔗 Información del Parque](https://www.google.com/search?q=parque+empresarial+vega+del+rey)
-  * **PCT Cartuja:** [🔗 Informe de Actividad](https://www.pctcartuja.es/)
+- [Documentos de la unidad](./documentos/)
+- [Diagramas e imágenes](./img/)
 
------
+  ## Bibliografía / Webgrafía 
+- Autor1, Título del libro o artículo, Editorial/Año.
+- **Informe Mercado Trabajo Sevilla 2024:** [📂 Ver documento local](https://www.google.com/search?q=./documentos/08_Informe_SEPE_Mercado_IT.pdf) (Referencia a la dificultad de cobertura de vacantes técnicas en Tabla 32).
+- **Web Corporativa OGA:** [🔗 oga.ai](https://oga.ai)
+- **Parque Vega del Rey:** [🔗 Información del Parque](https://www.google.com/search?q=parque+empresarial+vega+del+rey)
+- **PCT Cartuja:** [🔗 Informe de Actividad](https://www.pctcartuja.es/)
 
-  * **[Mercado Laboral]** `Mercado_de_Trabajo_2024_Sevilla_(Datos_2023).pdf`: Informe del SEPE que justifica la demanda de perfiles ASGBD y SysAdmin.
-  * **[Contexto Empresa]** `oga_noticia_info.pdf`: Información corporativa sobre OGA, sus premios y actividad en IA.
-  * **[Ecosistema]** `Informe-Resultados_Sevilla-TechPark_DEF.pdf`: Datos sobre el impacto económico y tecnológico de Cartuja/Sevilla.
-  * **[Estrategia Regional]** `Estrategia_Cloud_v.Publica.5r1.pdf`: Marco de referencia de la Junta de Andalucía para la adopción de Cloud y seguridad.
-  * **[Normativa]** `enlacesBOEyreferenciamercadosevilla.pdf`: Referencias legales al ENS y normativa europea.
+
+
+
+
 
 
 
