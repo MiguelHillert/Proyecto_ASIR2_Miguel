@@ -37,7 +37,7 @@ Antes de entrar en detalle, es vital contextualizar la situación laboral con da
 
 Ubicada en el entorno de innovación de Sevilla, **OGA** no es una consultora tradicional; es una "boutique" especializada en **Inteligencia Artificial e Investigación Operativa** para eficientar procesos críticos en sectores como energía, logística y defensa.
 
-He elegido esta empresa por su relevancia y proyección, tal como se detalla en su dossier de prensa (ver [📄 Noticia OGA Info](https://www.google.com/search?q=./documentos/oga_noticia_info.pdf)):
+He elegido esta empresa por su relevancia y proyección, tal como se detalla en su dossier de prensa (ver [📄 Noticia OGA Info](documentos/oga_noticia_info.pdf)):
 
   * **Reconocimiento:** Ha sido galardonada en los **Premios de RSE y Sostenibilidad 2024** en la categoría PYME, destacando su compromiso con la innovación y la sostenibilidad.
   * **Innovación:** Cuenta con el apoyo del Grupo CÁTEDRA y lidera la Cátedra URJC-OGA en IA y Desarrollo Sostenible.
