@@ -31,7 +31,7 @@ Antes de entrar en detalle, es vital contextualizar la situación laboral con da
   * **Estabilidad y Demanda:** Existe una dificultad real para cubrir vacantes técnicas. La **Tabla 32** del informe destaca explícitamente la escasez de candidatos para el perfil de **"Diseñadores y administradores de bases de datos"** y ocupaciones técnicas relacionadas con la informática.
   * **Calidad del Empleo:** El informe señala el crecimiento sostenido de la contratación indefinida en el sector TIC, justificando la viabilidad laboral de la especialización propuesta en este proyecto.
 
-En este entorno de Vega del Rey, no hablamos de micro-pymes, sino de grandes jugadores:
+En el entorno de Vega del Rey, no hablamos de micro-pymes, sino de grandes jugadores:
 
    * Ayesa: Gigante de ingeniería y tecnología.
 
