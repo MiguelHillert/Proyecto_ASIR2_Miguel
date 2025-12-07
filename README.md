@@ -10,7 +10,9 @@
 ![Escalabilidad y Cloud](https://img.shields.io/badge/Infraestructura-Cloud%20%26%20Escalable-purple)
 
 
-  <img src="UD1/img/ia.png" align="center" width="600">
+<p align="center">
+  <img src="UD1/img/ai.png" alt="Ai" width="600">
+</p>
 
 
 
