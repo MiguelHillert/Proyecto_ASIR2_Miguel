@@ -58,13 +58,13 @@ En el entorno de la Inteligencia Artificial aplicada, existe una brecha operativ
 Basándonos en la realidad del mercado laboral descrita en el informe del SEPE (ver [📄 Informe SEPE pág. 83](documentos/Mercado_de_Trabajo_2024_Sevilla_(Datos_2023).pdf)) y la naturaleza crítica de OGA, el proyecto cubrirá tres necesidades clave:
 
   * **Profesionalización y Gobierno del Dato:**
-    Dado que el informe del SEPE alerta sobre la falta de candidatos para administración de bases de datos (Tabla 32), este proyecto implementará un servidor de base de datos centralizado (**MariaDB**). El objetivo es pasar de datos dispersos a un sistema con políticas de usuarios estrictas y copias de seguridad automatizadas, protegiendo el activo más valioso de OGA.
+    Dado que el informe del SEPE alerta sobre la falta de candidatos para administración de bases de datos (Tabla 32), este proyecto implementará un servidor de base de datos centralizado. El objetivo es pasar de datos dispersos a un sistema con políticas de usuarios estrictas y copias de seguridad automatizadas, protegiendo el activo más valioso de OGA.
 
   * **Continuidad Operativa y Monitorización:**
-    Los procesos de IA son intensivos. Una caída del sistema implica pérdidas directas. Se requiere un sistema de **observabilidad en tiempo real** (con Grafana/Prometheus) que actúe como "signo vital" del servidor, alertando sobre saturación de recursos antes de que ocurra un fallo crítico.
+    Los procesos de IA son intensivos. Una caída del sistema implica pérdidas directas. Se requiere un sistema de **observabilidad en tiempo real** que actúe como "signo vital" del servidor, alertando sobre saturación de recursos antes de que ocurra un fallo crítico.
 
   * **Acceso Remoto Seguro (Perímetro Híbrido):**
-    La flexibilidad laboral es clave, pero exponer servidores de cálculo a internet es un riesgo. La solución técnica será un túnel **VPN (WireGuard)**, permitiendo a los ingenieros acceder a la potencia de cálculo de la oficina de forma cifrada y transparente.
+    La flexibilidad laboral es clave, pero exponer servidores de cálculo a internet es un riesgo. La solución técnica será un túnel VPN, permitiendo a los ingenieros acceder a la potencia de cálculo de la oficina de forma cifrada y transparente.
 
 ### 4\. Oportunidades y viabilidad del proyecto
 
