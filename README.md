@@ -11,7 +11,7 @@
 
 
 <p align="center">
-  <img src="UD1/img/ai.png" alt="Ai" width="600">
+  <img src="./UD1/img/ai.png" alt="Ai" width="600">
 </p>
 
 
